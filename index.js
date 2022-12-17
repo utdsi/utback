@@ -7,6 +7,7 @@ const {connection} = require("./config/db.js")
 const {authRouter} = require("./routes/auth.route.js")
 const {productRouter} = require("./routes/product.route")
 const {cartRouter}  =  require("./routes/cart.route.js")
+const {ProductModel} = require("./model/product.model")
 const cors = require('cors')
 
  
@@ -14,8 +15,12 @@ app.use(cors())
 app.use(express.json())
 
 
-app.get("/",(req,res)=>{
-    res.send("welcome")
+app.get("/",async(req,res)=>{
+
+    const query = req.query
+    //res.send("welcome to our ecommerce website")
+    const data = await ProductModel.find(query)
+    res.send(data)
 })
 app.use("/",authRouter)
 
