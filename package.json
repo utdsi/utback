@@ -25,5 +25,6 @@
     "url": "https://github.com/utdsi/utback/issues"
   },
   "homepage": "https://github.com/utdsi/utback#readme",
+  "devDependencies": {},
   "description": ""
 }
