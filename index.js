@@ -27,7 +27,7 @@ app.use("/",authRouter)
 app.use("/products",productRouter)
 
 app.use("/cart",cartRouter)
-app.listen(process.env.port,async()=>{
+app.listen(process.env.PORT,async()=>{
     try {
         await connection
         console.log("connected to db successfully")
@@ -35,7 +35,7 @@ app.listen(process.env.port,async()=>{
         console.log("error in getting connected to db")
         console.log(error)
     }
-    console.log(`listening on port ${process.env.port}`)
+    console.log(`listening on port ${process.env.PORT}`)
 
 
 })
