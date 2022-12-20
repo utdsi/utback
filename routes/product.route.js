@@ -13,7 +13,7 @@ const authen = (req,res,next)=>{
 
     if(token){
         const decoded = jwt.verify(token,"admin")
-        //console.log(decoded)
+        console.log(decoded)
 
         if(decoded){
             const editorID  = decoded.editorID
@@ -78,7 +78,7 @@ productRouter.delete("/delete/:productID",async(req,res)=>{
 
     try {
         const productID = req.params.productID
-    const editorID = req.body.editorID
+        const editorID = req.body.editorID
 
     const cart = await ProductModel.findOne({_id:productID})
 
