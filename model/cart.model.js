@@ -3,11 +3,6 @@ const mongoose = require("mongoose")
 
 const cartSchema = mongoose.Schema({
     logo:{
-        
-        contentType:String
-    },
-    
-    logo:{
         type:String,
     required:true},
 

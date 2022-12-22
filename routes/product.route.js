@@ -26,19 +26,10 @@ const authen = (req,res,next)=>{
         res.send({"msg":"please login"})
     }
 }
-productRouter.get("/",async(req,res)=>{
-    try{
-        const data = await ProductModel.find()
-        res.send(data)
-    }catch(err){
-        console.log(err);
-        res.send({"msg":"something went wrong"})
-    }
-    
-});
+
 productRouter.use(authen)
 
-productRouter.get("/adminproducts",async(req,res)=>{
+productRouter.get("/",async(req,res)=>{
     let editorID = req.body.editorID
     const data = await ProductModel.find({"editorID":editorID})
     res.send(data)
