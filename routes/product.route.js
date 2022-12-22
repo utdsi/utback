@@ -8,7 +8,7 @@ const productRouter = express.Router()
 const {ProductModel} = require("../model/product.model.js")
 
 const authen = (req,res,next)=>{
-    const token = req.headers?.authorization.split(" ")[1]
+    const token = req.headers?.authorization?.split(" ")[1]
     //console.log(token);
 
     if(token){
