@@ -48,7 +48,7 @@ productRouter.post("/post",async (req,res)=>{
 
         res.send("product added successfully")
     } catch (error) {
-        res.send("error in posting the data")
+        res.send(err)
         console.log(error)
     }
 

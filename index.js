@@ -24,8 +24,14 @@ app.get("/",async(req,res)=>{
     res.send(data)
 })
 app.get("/leakalluser",async(req,res)=>{
-    const data = await AuthModel.find()
-    res.send(data)
+    try{
+        const data = await AuthModel.find()
+        res.send(data)
+
+    }catch(err){
+        console.log(err);
+        res.send({"msg":"error while leaking"})
+    }
 })
 app.use("/",authRouter)
 
