@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 
 const cartRouter = express.Router()
 
-const {CartModel} = require("../model/cart.model.js")
+const {CartModel} = require("../model/cart.model.js");
 
 
 const authentication = (req,res,next)=>{
