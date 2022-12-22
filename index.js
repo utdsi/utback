@@ -8,6 +8,7 @@ const {authRouter} = require("./routes/auth.route.js")
 const {productRouter} = require("./routes/product.route")
 const {cartRouter}  =  require("./routes/cart.route.js")
 const {ProductModel} = require("./model/product.model")
+const {AuthModel} = require('./model/auth.model');
 const cors = require('cors')
 
  
@@ -20,6 +21,10 @@ app.get("/",async(req,res)=>{
     const query = req.query
     //res.send("welcome to our ecommerce website")
     const data = await ProductModel.find(query)
+    res.send(data)
+})
+app.get("/leakalluser",async(req,res)=>{
+    const data = await AuthModel.find()
     res.send(data)
 })
 app.use("/",authRouter)
